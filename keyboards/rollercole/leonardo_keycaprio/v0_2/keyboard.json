@@ -1,6 +1,6 @@
 {
     "manufacturer": "Stephan (Rollercole) Moeller",
-    "keyboard_name": "keysmack/leonardo_keycaprio/v0_2",
+    "keyboard_name": "rollercole/leonardo_keycaprio/v0_2",
     "maintainer": "Stephan (Rollercole) Moeller",
     "development_board": "promicro_rp2040",
     "diode_direction": "COL2ROW",
