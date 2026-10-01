@@ -35,11 +35,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
      * BASE
      * ┌───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┐
-     * │ Q │ W │R/G│ P │ B │           │ K │ L │O/G│ U │ ' │
+     * │ Q │ W │E/G│ R │ T │           │ Y │ U │I/G│ O │ P │
      * ├───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┤
-     * │ F │A/A│S/C│T/S│ G │           │ M │N/S│E/C│I/A│ Y │
+     * │ A │S/A│D/C│F/S│ G │           │ H │J/S│K/C│L/A│ ' │
      * ├───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┤
-     * │ Z │ X │ C │ D │ V │           │ J │ H │ , │ . │BOOT│
+     * │ Z │ X │ C │ V │ B │           │ N │ M │ , │ . │BOOT│
      * └───┴───┴───┴───┴───┘           └───┴───┴───┴───┴───┘
      *           ┌─────┬─────┐       ┌─────┬─────┐
      *           │  O  │ENT/N│       │SPC/A│  I  │
@@ -47,9 +47,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * (X/M = tap X, hold modifier M: G=gui A=alt C=ctl S=sft N=NUM ARROWS)
      */
     [_BASE] = LAYOUT(
-        DK_Q,    DK_W,          LGUI_T(DK_R),   DK_P,    DK_B,                DK_K,    DK_L,          LGUI_T(DK_O),   DK_U,    DK_QUOT,
-        DK_F,    LALT_T(DK_A),  LCTL_T(DK_S),   LSFT_T(DK_T), DK_G,           DK_M,    LSFT_T(DK_N),  LCTL_T(DK_E),   LALT_T(DK_I), DK_Y,
-        DK_Z,    DK_X,          DK_C,           DK_D,    DK_V,                DK_J,    DK_H,          DK_COMM,        DK_DOT,  QK_BOOT,
+        DK_Q,    DK_W,          LGUI_T(DK_E),   DK_R,    DK_T,                DK_Y,    DK_U,          LGUI_T(DK_I),   DK_O,    DK_P,
+        DK_A,    LALT_T(DK_S),  LCTL_T(DK_D),   LSFT_T(DK_F), DK_G,           DK_H,    LSFT_T(DK_J),  LCTL_T(DK_K),   LALT_T(DK_L), DK_QUOT,
+        DK_Z,    DK_X,          DK_C,           DK_V,    DK_B,                DK_N,    DK_M,          DK_COMM,        DK_DOT,  QK_BOOT,
                                  DK_O,           LT(_NUM, KC_ENT),             LT(_ARROWS, KC_SPC),    DK_I
     ),
 
@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * NUM (hold left thumb)
      */
     [_NUM] = LAYOUT(
-        KC_TRNS,      ALT_TAB,   DK_R,    KC_TRNS, KC_TRNS,              KC_TRNS, KC_7,          KC_8,          KC_9,          KC_TRNS,
+        KC_TRNS,      ALT_TAB,   DK_E,    KC_TRNS, KC_TRNS,              KC_TRNS, KC_7,          KC_8,          KC_9,          KC_TRNS,
         LGUI(KC_LEFT),LCTL(DK_Z),KC_TRNS, LCTL(DK_Y), LGUI(KC_RGHT),     KC_TRNS, LSFT_T(KC_4),  LCTL_T(KC_5),  LALT_T(KC_6),  DK_PLUS,
         KC_TRNS,      KC_ESC,    LCTL(DK_C), KC_DEL, KC_TRNS,            DB_TOGG, KC_1,          KC_2,          KC_3,          KC_TRNS,
                                   KC_TRNS,   KC_TRNS,                     LT(_ARROWS, KC_0),      KC_TRNS
@@ -158,23 +158,23 @@ enum combo_events {
     C_MPRV_BOTH,
 };
 
-const uint16_t PROGMEM combo_j_wr[]             = {DK_W, LGUI_T(DK_R), COMBO_END};
-const uint16_t PROGMEM combo_holdmod_base_as[]  = {LALT_T(DK_A), LCTL_T(DK_S), COMBO_END};
-const uint16_t PROGMEM combo_holdmod_base_st[]  = {LCTL_T(DK_S), LSFT_T(DK_T), COMBO_END};
-const uint16_t PROGMEM combo_holdmod_num_st[]   = {LCTL_T(DK_S), LCTL(DK_Y), COMBO_END};
-const uint16_t PROGMEM combo_holdmod_num_as[]   = {LGUI(KC_LEFT), LCTL_T(DK_S), COMBO_END};
+const uint16_t PROGMEM combo_j_wr[]             = {DK_W, LGUI_T(DK_E), COMBO_END};
+const uint16_t PROGMEM combo_holdmod_base_as[]  = {LALT_T(DK_S), LCTL_T(DK_D), COMBO_END};
+const uint16_t PROGMEM combo_holdmod_base_st[]  = {LCTL_T(DK_D), LSFT_T(DK_F), COMBO_END};
+const uint16_t PROGMEM combo_holdmod_num_st[]   = {LCTL_T(DK_D), LCTL(DK_Y), COMBO_END};
+const uint16_t PROGMEM combo_holdmod_num_as[]   = {LGUI(KC_LEFT), LCTL_T(DK_D), COMBO_END};
 const uint16_t PROGMEM combo_holdmod_arrows_st[]= {TD(TD_CTL_LPRN), TD(TD_SFT_RPRN), COMBO_END};
 const uint16_t PROGMEM combo_alt_f4_both[]      = {LSFT_T(KC_F6), LSFT_T(KC_BSPC), COMBO_END};
-const uint16_t PROGMEM combo_boot_vj[]          = {DK_V, DK_J, COMBO_END};
-const uint16_t PROGMEM combo_boot_qb[]          = {DK_Q, DK_B, COMBO_END};
-const uint16_t PROGMEM combo_boot_kquot[]       = {DK_K, DK_QUOT, COMBO_END};
-const uint16_t PROGMEM combo_ae[]               = {DK_L, LGUI_T(DK_O), COMBO_END};
-const uint16_t PROGMEM combo_ostr[]             = {DK_L, DK_U, COMBO_END};
-const uint16_t PROGMEM combo_arng[]             = {LGUI_T(DK_O), DK_U, COMBO_END};
+const uint16_t PROGMEM combo_boot_vj[]          = {DK_B, DK_N, COMBO_END};
+const uint16_t PROGMEM combo_boot_qb[]          = {DK_Q, DK_T, COMBO_END};
+const uint16_t PROGMEM combo_boot_kquot[]       = {DK_Y, DK_P, COMBO_END};
+const uint16_t PROGMEM combo_ae[]               = {DK_U, LGUI_T(DK_I), COMBO_END};
+const uint16_t PROGMEM combo_ostr[]             = {DK_U, DK_O, COMBO_END};
+const uint16_t PROGMEM combo_arng[]             = {LGUI_T(DK_I), DK_O, COMBO_END};
 const uint16_t PROGMEM combo_ques_arrows[]      = {KC_UP, KC_END, COMBO_END};
 const uint16_t PROGMEM combo_exlm_arrows[]      = {DK_LABK, TD(TD_GUI_EQL), COMBO_END};
 const uint16_t PROGMEM combo_exlm_both[]        = {KC_F7, KC_F8, COMBO_END};
-const uint16_t PROGMEM combo_holdmod_base_ei[]  = {LCTL_T(DK_E), LALT_T(DK_I), COMBO_END};
+const uint16_t PROGMEM combo_holdmod_base_ei[]  = {LCTL_T(DK_K), LALT_T(DK_L), COMBO_END};
 const uint16_t PROGMEM combo_plus_arrows[]      = {KC_DOWN, KC_RGHT, COMBO_END};
 const uint16_t PROGMEM combo_mins_num[]         = {LCTL_T(KC_5), LALT_T(KC_6), COMBO_END};
 const uint16_t PROGMEM combo_pipe_arrows[]      = {KC_LEFT, KC_DOWN, COMBO_END};
