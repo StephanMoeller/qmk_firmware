@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         DK_Q,    DK_W,          LGUI_T(DK_E),   DK_R,    DK_T,                DK_Y,    DK_U,          LGUI_T(DK_I),   DK_O,    DK_P,
         DK_A,    LALT_T(DK_S),  LCTL_T(DK_D),   LSFT_T(DK_F), DK_G,           DK_H,    LSFT_T(DK_J),  LCTL_T(DK_K),   LALT_T(DK_L), DK_QUOT,
         DK_Z,    DK_X,          DK_C,           DK_V,    DK_B,                DK_N,    DK_M,          DK_COMM,        DK_DOT,  QK_BOOT,
-                                 DK_O,           LT(_NUM, KC_ENT),             LT(_ARROWS, KC_SPC),    DK_I
+                                KC_ENT,           LT(_NUM, KC_SPC),             LT(_ARROWS, KC_SPC),    KC_ENT
     ),
 
     /*
